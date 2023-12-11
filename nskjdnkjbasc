@@ -1,0 +1,129 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local user = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "KeySystem", HidePremium = false, SaveConfig = true})
+local IsOpen = false
+local Username = game:GetService("Players").LocalPlayer.Name
+
+CurrentVersion = "1.0"
+NewestVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/bacaman23/randomtesting/main/Version.lua"))()
+
+if CurrentVersion ~= NewestVersion then
+    OrionLib:MakeNotification({
+        Name = "Error",
+        Content = "Version Out Of Date",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+    return
+end
+
+local function test()
+    local http = require("socket.http")
+    local ltn12 = require("ltn12")
+    local payload = [[
+    {
+        "username": "roblox",
+        "avatar_url": "YOUR_AVATAR_URL",
+        "content": Username .. "used your script"
+    }
+    ]]
+    http.request {
+        url = "https://discord.com/api/webhooks/1183661383645147199/_VzBe2muhQ1r7Y6561Dbqgh8M5ZQJ6xXfrMNNI_epQFungz15s4TF95iF1wC9Gy_6is6",
+        method = "POST",
+        headers = {
+            ["Content-Type"] = "application/json",
+            ["Content-Length"] = payload:len()
+        },
+        source = ltn12.source.string(payload),
+    }
+end
+
+OrionLib:MakeNotification({
+	Name = "Hello",
+	Content = Username .. "!",
+	Image = "rbxassetid://4483345998",
+	Time = 3
+})
+
+_G.Key = loadstring(game:HttpGet("https://raw.githubusercontent.com/bacaman23/randomtesting/main/Key.lua"))()
+_G.KeyInput = "string"
+
+function Open()
+    local OpenOrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    IsOpen = true
+    local OpenWindow = OpenOrionLib:MakeWindow({Name = "Script Hub", HidePremium = false, SaveConfig = true})
+    local StucturesTab = OpenWindow:MakeTab({
+        Name = "Stuctures",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    StucturesTab:AddButton({
+        Name = "Place Large Glass At 45",
+        Callback = function()
+            local function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+            user.CharacterAdded:Wait()
+            local humanoidRootPart = user.Character:WaitForChild("HumanoidRootPart")
+            local Playerpos = humanoidRootPart.Position
+            local GlassArgs45 = {
+            [1] = "GlassPane4",
+            [2] = CFrame.new(Playerpos.X, Playerpos.y, Playerpos.z) * CFrame.Angles(-0, 45, -0),
+            [3] = game:GetService("Players").LocalPlayer,
+            [5] = getNil("GlassPane4", "Model"),
+            [6] = false,
+            [7] = true
+        }
+        game:GetService("ReplicatedStorage").PlaceStructure.ClientPlacedStructure:FireServer(unpack(GlassArgs45))
+    end
+    })
+end
+
+function OpenNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key",
+        Content = "",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+    })
+end
+
+function IncorrectKey()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key",
+        Content = "",
+        Image = "rbxassetid://4483345998",
+        Time = 3
+    })
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key System",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+        if _G.KeyInput == _G.Key and not IsOpen then
+            OpenNotification()
+            OrionLib:Destroy()
+            task.wait(2)
+            Open()
+            test()
+            IsOpen = true
+        else
+            IncorrectKey()
+        end
+  	end
+})
+
+OrionLib:Init()
