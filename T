@@ -1,9 +1,8 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local user = game.players.LocalPlayer
+local user = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "KeySystem", HidePremium = false, SaveConfig = true})
 local IsOpen = false
-local Players = game:GetService("Players")
-local name = game.players.LocalPlayer.Name
+local name = game:GetService("Players").LocalPlayer.Name
 
 CurrentVersion = "1.0"
 NewestVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/bacaman23/randomtesting/main/Version.lua"))()
