@@ -96,7 +96,7 @@ Tab:AddButton({
         if _G.KeyInput == _G.Key and not IsOpen then
             OpenNotification()
             OrionLib:Destroy()
-            task.waitt(2)
+            task.wait(2)
             Open()
             IsOpen = true
         else
