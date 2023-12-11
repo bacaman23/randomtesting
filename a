@@ -28,8 +28,9 @@ _G.Key = loadstring(game:HttpGet("https://raw.githubusercontent.com/bacaman23/ra
 _G.KeyInput = "string"
 
 function Open()
+    local OpenOrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
     IsOpen = true
-    local OpenWindow = OrionLib:MakeWindow({Name = "Script Hub", HidePremium = false, SaveConfig = true})
+    local OpenWindow = OpenOrionLib:MakeWindow({Name = "Script Hub", HidePremium = false, SaveConfig = true})
     local StucturesTab = OpenWindow:MakeTab({
         Name = "Stuctures",
         Icon = "rbxassetid://4483345998",
@@ -95,7 +96,7 @@ Tab:AddButton({
         if _G.KeyInput == _G.Key and not IsOpen then
             OpenNotification()
             OrionLib:Destroy()
-            task.Wait(2)
+            task.waitt(2)
             Open()
             IsOpen = true
         else
