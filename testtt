@@ -1,7 +1,3 @@
-function AF(FA)
-    loadstring(game:HttpGet(FA))()
-end
-
 local AN = loadstring((game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 XG = 'https://raw.githubusercontent.com/shlexware/Orion/main/source'
 local user = game.Players.LocalPlayer
@@ -67,7 +63,6 @@ GX = "55"
 GY = "130"
 CCA = " Out"
 GZ = "60"
-BZ = AF(ZB)
 PA = "170"
 CCF = " Date"
 PB = "65"
