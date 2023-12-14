@@ -100,6 +100,7 @@ PM = "135"
 SS = "Check"..HYU..UU
 WP = {GA, GC, GB, GH, GL, GR, GD, GI, GF, GO, GT, GX, GZ, PB, GJ, PF, PG, PI, GQ, GM, GE, PC, PE, PK, GP, GG, GY, PM, GU, PL, Gk, PJ, PH, PD, PA, GN, GS}
 
+print("Your Version: "..CC.." Newest Version:"..CD)
 if CC ~= CD then
     AN:MakeNotification({
         Name = RR,
