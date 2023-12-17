@@ -1,5 +1,5 @@
 local Path_1 = game.ReplicatedStorage.StaffTablet_Remotes.TabletEvents
-local Path_2 = game.ReplicatedStorage.StaffTablet_Remotes.TabletFunctions
+local Path_2 = game.ReplicatedStorage.StaffTablet_Remotes
 local Path_3 = game.ReplicatedStorage.vocovo
 local Path_4 = game.ReplicatedStorage.Communication.Functions
 local Path_5 = game.ReplicatedStorage.Communication.Events
@@ -38,7 +38,6 @@ OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
 end))
 
 Path_1:Destroy()
-Path_2:Destroy()
 Path_3:Destroy()
 Path_4:Destroy()
 Path_5:Destroy()
@@ -49,4 +48,6 @@ Path_9:Destroy()
 Path_10:Destroy()
 Path_11:Destroy()
 
-print("All Code Loaded")
+if Path_2 then
+    Path_2:Destroy()
+end
