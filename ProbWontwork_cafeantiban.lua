@@ -36,18 +36,48 @@ OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
 
 	return OldNamecall(...)
 end))
-
-Path_1:Destroy()
-Path_3:Destroy()
-Path_4:Destroy()
-Path_5:Destroy()
-Path_6:Destroy()
-Path_7:Destroy()
-Path_8:Destroy()
-Path_9:Destroy()
-Path_10:Destroy()
-Path_11:Destroy()
-
-if Path_2 then
-    Path_2:Destroy()
+if Path_1 then
+	Path_1:Destroy()
+	print("Destroyed "..Path_1)
 end
+if Path_2 then
+	Path_2:Destroy()
+	print("Destroyed "..Path_2)
+end
+if Path_3 then
+	Path_3:Destroy()
+	print("Destroyed "..Path_3)
+end
+if Path_4 then
+	Path_4:Destroy()
+	print("Destroyed "..Path_4)
+end
+if Path_5 then
+	Path_5:Destroy()
+	print("Destroyed "..Path_5)
+end
+if Path_6 then
+	Path_6:Destroy()
+	print("Destroyed "..Path_6)
+end
+if Path_7 then
+	Path_7:Destroy()
+	print("Destroyed "..Path_7)
+end
+if Path_8 then
+	Path_8:Destroy()
+	print("Destroyed "..Path_8)
+end
+if Path_9 then
+	Path_9:Destroy()
+	print("Destroyed "..Path_9)
+end
+if Path_10 then
+	Path_10:Destroy()
+	print("Destroyed "..Path_10)
+end
+if Path_11 then
+	Path_11:Destroy()
+	print("Destroyed "..Path_11)
+end
+
