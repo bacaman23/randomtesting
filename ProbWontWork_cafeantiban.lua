@@ -1,5 +1,3 @@
-local Path_1 = game.ReplicatedStorage.StaffTablet_Remotes.TabletEvents
-local Path_2 = game.ReplicatedStorage.StaffTablet_Remotes
 local Path_3 = game.ReplicatedStorage.vocovo
 local Path_4 = game.ReplicatedStorage.Communication.Functions
 local Path_5 = game.ReplicatedStorage.Communication.Events
@@ -36,14 +34,6 @@ OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
 
 	return OldNamecall(...)
 end))
-if Path_1 then
-	Path_1:Destroy()
-	print("Destroyed "..Path_1)
-end
-if Path_2 then
-	Path_2:Destroy()
-	print("Destroyed "..Path_2)
-end
 if Path_3 then
 	Path_3:Destroy()
 	print("Destroyed "..Path_3)
