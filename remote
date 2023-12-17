@@ -1,0 +1,10 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local function printRemotes(parent, path)
+    for _, child in ipairs(parent:GetChildren()) do
+        if child:IsA("RemoteEvent") or child:IsA("RemoteFunction") then
+            print(path .. "." .. child.Name)
+        end
+        printRemotes(child, path .. "." .. child.Name)
+    end
+end
+printRemotes(replicatedStorage, "game.ReplicatedStorage")
