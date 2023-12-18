@@ -8,7 +8,7 @@
           \_Welcome to LuaObfuscator.com   (Alpha 0.9.17) ~  Much Love, Ferib 
 
 ]]--
-p
+
 local v0 = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))();
 local v1 = game.Players.LocalPlayer;
 local v2 = v0:MakeWindow({Name="KeySystem",HidePremium=false,SaveConfig=true});
