@@ -1,3 +1,4 @@
+-- Coded By Bacaman23#6979
 local TABLE_TableIndirection = {};
 TABLE_TableIndirection["obf_stringchar%0"] = string.char;
 TABLE_TableIndirection["obf_stringbyte%0"] = string.byte;
