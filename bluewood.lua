@@ -1,3 +1,4 @@
+local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
     	Title = "INFO",
     	Text = "Code Loaded",
@@ -5,7 +6,6 @@ StarterGui:SetCore("SendNotification", {
     	Duration = 2,
 })
 _G.Tree = nil
-local StarterGui = game:GetService("StarterGui")
 while _G.Tree == nil do
 	wait(2)
 	for i, v in pairs(workspace:GetChildren()) do
