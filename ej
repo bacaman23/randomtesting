@@ -1,7 +1,7 @@
 function search(starterGui)
     for _, obj in ipairs(starterGui:GetDescendants()) do
         -- If the object is a Frame or ImageLabel, skip the rest of this loop iteration
-        if not (obj:IsA("Frame") or obj:IsA("ImageLabel") or obj:IsA("ScrollingFrame")) then
+        if not (obj:IsA("Frame") or obj:IsA("ImageLabel") or obj:IsA("ScrollingFrame") or obj:IsA("ImageButton")) then
             if obj.Name == "V2330" or obj.Name == "version" then
                 print(obj:GetFullName())
             elseif obj:IsA("ValueBase") then
