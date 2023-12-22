@@ -1,0 +1,8 @@
+local playerName = game.Players.LocalPlayer.Name
+local function printPaths(instance, path)
+    print(path)
+    for _, child in ipairs(instance:GetChildren()) do
+        printPaths(child, path .. "." .. child.Name)
+    end
+end
+printPaths(StarterGui, "game.Players[playerName]")
