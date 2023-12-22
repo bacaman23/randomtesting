@@ -21,5 +21,4 @@ function search(starterGui)
     end
 end
 
-search(game.StarterGui)
-
+search(game:GetService("StarterGui"))
