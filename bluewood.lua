@@ -1,4 +1,9 @@
-print("code loading")
+StarterGui:SetCore("SendNotification", {
+    	Title = "INFO",
+    	Text = "Code Loaded",
+    	Icon = "rbxassetid://6238540373",
+    	Duration = 2,
+})
 _G.Tree = nil
 local StarterGui = game:GetService("StarterGui")
 while _G.Tree == nil do
@@ -15,12 +20,14 @@ while _G.Tree == nil do
 		end
 	end
 end
-if _G.Tree > 0 or _G.Tree ~= nil then
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Tree["WoodSection"].CFrame
+if _G.Tree ~= nil then
+	local treePosition = _G.Tree["WoodSection"].CFrame
+	local offset = Vector3.new(0, 25, 0) -- Offset of 25 studs above the tree
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(treePosition.p + offset)
 	StarterGui:SetCore("SendNotification", {
-    	Title = "V2322",
-    	Text = "Found Tree Type[BlueSpruce]",
-    	Icon = "rbxassetid://6238540373",
-    	Duration = 2,
+    		Title = "V2322",
+    		Text = "Found Tree Type[BlueSpruce]",
+    		Icon = "rbxassetid://6238540373",
+    		Duration = 2,
 	})
 end
