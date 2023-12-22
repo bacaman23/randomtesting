@@ -2,7 +2,7 @@ local playerName = game.Players.LocalPlayer.Name
 local function printPaths(instance)
     print(path)
     for _, child in ipairs(instance:GetChildren()) do
-        printPaths(child, path .. "." .. child.Name)
+        printPaths(tchild, path .. "." .. child.Name)
     end
 end
 printPaths(StarterGui)
