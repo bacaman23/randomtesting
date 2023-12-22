@@ -15,7 +15,7 @@ while _G.Tree == nil
 		end
 	end
 end
-if Tree > 0 then
+if _G.Tree > 0 or _G.Tree ~= nil then
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Tree["WoodSection"].CFrame
 	StarterGui:SetCore("SendNotification", {
     	Title = "V2322",
