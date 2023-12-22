@@ -1,13 +1,13 @@
 print("code loading")
 _G.Tree = nil
 local StarterGui = game:GetService("StarterGui")
-while _G.Tree == nil
+while _G.Tree == nil do
 	wait(2)
 	for i, v in pairs(workspace:GetChildren()) do
 		if v.Name == "TreeRegion" then
 			for k, l in pairs(v:GetChildren()) do
 				if l:FindFirstChild("TreeClass") and l:FindFirstChild("WoodSection") and l:FindFirstChild("Owner") then
-					if (l.TreeClass.Value == "BlueSpruce") and l.Owner.Value == nil then
+					if (l.TreeClass.Value == "BlueSpruce") then
 						_G.Tree = l
 					end
 				end
