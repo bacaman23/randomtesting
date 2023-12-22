@@ -1,3 +1,4 @@
+print("code loading")
 local Tree
 local StarterGui = game:GetService("StarterGui")
 for i, v in pairs(workspace:GetChildren()) do
